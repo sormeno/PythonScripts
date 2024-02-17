@@ -1,0 +1,23 @@
+﻿dish_id,dish_name,recipe_address,prep_time,dish_type
+1,Tosty z rzodkiewką,Biedronka s34,0.25,breakfast
+2,Grzanki z pomidorami,Biedronka s35,0.25,breakfast
+3,Ziemniaki tłuczone,Biedronka s41,0.5,dinner
+4,Ryż z porem,Biedronka s51,0.5,dinner
+5,Tortilla z fasolką szparagową,Biedronka s107,0.5,breakfast
+6,Makaron z burakami,Biedronka s151,0.5,dinner
+7,Pieczony bakłażan z cieciorką,Biedronka s157,0.5,dinner
+8,Pieczony dorsz z rozmarynem,Biedronka s163,0.5,dinner
+9,Pomidory faszerowane makaronem,Biedronka s179,0.5,dinner
+10,Naleśniki z mandarynkami,Biedronka s187,0.5,breakfast
+11,Ryż z dorszem,Biedronka s196,0.5,dinner
+12,Ryż z kapustą włoską,Biedronka s203,0.75,dinner
+13,Papryki faszerowane,Biedronka s205,1,dinner
+14,Sałatka grecka,Alicja's head ,0.25,dinner
+15,Kanapki z jajkiem i majonezem,Filip's head ,0.25,breakfast
+16,Tosty z łososiem i awokado,Filip's head ,0.25,breakfast
+17,Jajecznica,Alicja's head ,0.25,breakfast
+18,Wrap jajeczny,Wrzosek s21,0.5,breakfast
+19,Wrap z mozarellą,Wrzosek s23,0.25,breakfast
+20,Tosty z łososiem i jajecznicą,Wrzosek s29,0.25,breakfast
+21,Makaron z sosem szpinakowym,https://www.przyslijprzepis.pl/przepis/penne-z-miesem-mielonym-i-szpinakiem ,0.5,dinner
+22,Tortilla śniadaniowa,Alicja's head ,0.25,breakfast
