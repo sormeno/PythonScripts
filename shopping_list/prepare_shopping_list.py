@@ -19,7 +19,7 @@ SELECT
     CASE 
       WHEN SUM(di.quantity) = 0
         THEN NULL
-      ELSE ROUND(SUM(di.quantity),1) 
+      ELSE ROUND(SUM(IIF(dish_type='dinner',3,1)*di.quantity),1) 
     END as ilosc ,
     i.unit as jm
 FROM dish_ingredients di
@@ -27,8 +27,8 @@ INNER JOIN dishes d ON di.dish_id = d.dish_id
 INNER JOIN menus m ON d.dish_id = m.dish_id
 INNER JOIN ingredients i ON di.ingredient_id = i.ingredient_id
 WHERE m.shopping_list_id = ?
-GROUP BY i.ingredient_id
-ORDER BY i.ingredient_name
+GROUP BY i.ingredient_id,i.unit
+ORDER BY i.ingredient_name 
 """, (shopping_list_id,))
 
 
