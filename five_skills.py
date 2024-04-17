@@ -8,7 +8,10 @@ discipline = [   #Discipline
         'Dzień bez FPW/Newsów/SocialMedia/HBO',
         'Zasypianie bez telefonu',
         'Pójść spać o 23',
-        'Wstać o 7:00'
+        'Wstać o 7:00',
+        'Medytacja 15min przed snem',
+        'Zjeść śniadanie w domu',
+        'Nie jeść słodyczy'
     ]
 
 skills = [
@@ -29,8 +32,7 @@ skills = [
         #Communication
         'Odmówić na błahe propzycje w dobry sposób',
         'Odmówić Alicji drobnych przysług',
-        'Przeprowadzić jakiś etap ewangelizacji Agile',
-        'Przygotuj informacje i przekonuj Alicję do wyjazdu do Chin'
+        'Przeprowadzić jakiś etap ewangelizacji Agile'
     ],
     [   #Sales
         'Przekonaj do czegoś Alicję',
@@ -45,7 +47,7 @@ skills = [
         'Napraw/wynieś/zrób coś co czeka od dawna w szafie',
         'Siłownia',
         'Dodaj nowe zadania do 5skills',
-        'Praca nad planem podróży do Chin'
+        'Praca nad planem podróży do Malezji/Indonezji'
     ]
 ]
 
