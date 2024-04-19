@@ -11,7 +11,8 @@ discipline = [   #Discipline
         'Wstać o 7:00',
         'Medytacja 15min przed snem',
         'Zjeść śniadanie w domu',
-        'Nie jeść słodyczy'
+        'Nie jeść słodyczy',
+        'Nie obgryzać paznokci/skórek',
     ]
 
 skills = [
@@ -26,20 +27,20 @@ skills = [
         'Lichess puzzles',
         'Czytanie ukriańskich newsów',
         'Czytanie niemieckich newsów',
-        'Kup model i go zbuduj'
+        'Kup model i go zbuduj',
     ],
     [
         #Communication
         'Odmówić na błahe propzycje w dobry sposób',
         'Odmówić Alicji drobnych przysług',
-        'Przeprowadzić jakiś etap ewangelizacji Agile'
+        'Przeprowadzić jakiś etap ewangelizacji Agile',
     ],
     [   #Sales
         'Przekonaj do czegoś Alicję',
         'Próba sprzedaży pomysłów biznesowych',
         'Self speaking english/deutsch',
         'Przekonaj znajomych na wyjście na piwo',
-        'Zaproponuj jakąś zmianę w pracy'
+        'Zaproponuj jakąś zmianę w pracy',
     ],
     [   #Taking Actions
         'Praca nad pomysłem biznesowym',
@@ -47,7 +48,7 @@ skills = [
         'Napraw/wynieś/zrób coś co czeka od dawna w szafie',
         'Siłownia',
         'Dodaj nowe zadania do 5skills',
-        'Praca nad planem podróży do Malezji/Indonezji'
+        'Praca nad planem podróży do Malezji/Indonezji',
     ]
 ]
 

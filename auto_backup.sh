@@ -1,5 +1,6 @@
+cd home/filip/PythonScripts/
 git add .
-#create commit and push only if there are files staged
+#count staged files
 count=$(git diff --cached --name-only | wc -l)
 if [ "$count" -gt 0 ]; then
     commit_message=$(date +'%Y-%m-%d')
