@@ -21,7 +21,7 @@ skills = [
         'Switching off przed zaśnięciem',
         'Czytaj książkę',
         'Napisz artykuł na blog',
-        'Quantum programming lesson',
+        'Obejrzyj wykład Tomasz Czajka',
         'Udemy training',
         'Zaplanuj menu na ten dzień',
         'Lichess puzzles',
@@ -58,7 +58,8 @@ url = 'https://api.todoist.com/rest/v2/'
 headers = {"Authorization": "Bearer 8828bec13c255fd1fb38e50b46b8e4b69fd03fc2", "Content-Type": "application/json", "X-Request-Id": str(uuid.uuid4())}
 
 #week discipline
-discipline_task = random.choice(discipline)
+random_disciplines = random.sample(discipline, 2)
+discipline_task = ', '.join(random_disciplines)
 date += timedelta(days=1)
 data = {"content": discipline_task, "due_string": date.strftime('%Y-%m-%d') + "at 8:00"}
 requests.post(url+'tasks', json=data, headers=headers)
