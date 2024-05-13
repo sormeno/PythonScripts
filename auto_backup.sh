@@ -1,5 +1,6 @@
-cd home/filip/PythonScripts/
+cd /home/filip/PythonScripts/
 git add .
+
 #count staged file
 count=$(git diff --cached --name-only | wc -l)
 if [ "$count" -gt 0 ]; then
