@@ -127,3 +127,4 @@ Other diff options
                           select files by diff type
     --output <file>       Output to a specific file
 
+fatal: could not read Username for 'https://github.com': No such device or address
