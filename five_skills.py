@@ -55,7 +55,7 @@ skills = [
 date = datetime.now()
 today_todoist = date.strftime("%Y-%m-%d")
 url = 'https://api.todoist.com/rest/v2/'
-headers = {"Authorization": "Bearer 8828bec13c255fd1fb38e50b46b8e4b69fd03fc2", "Content-Type": "application/json", "X-Request-Id": str(uuid.uuid4())}
+headers = {"Authorization": TODOIST_BEARER, "Content-Type": "application/json", "X-Request-Id": str(uuid.uuid4())}
 
 #week discipline
 random_disciplines = random.sample(discipline, 2)
