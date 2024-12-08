@@ -65,7 +65,7 @@ def get_kio():
 
 
 url = 'https://api.todoist.com/rest/v2/'
-headers = {"Authorization": "Bearer 8828bec13c255fd1fb38e50b46b8e4b69fd03fc2"}
+headers = {"Authorization": TODOIST_BEARER }
 
 try:
     todoist=get_today_inbox(url,headers,'2155964695')
