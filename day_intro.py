@@ -1,5 +1,6 @@
 from lib.mail import *
 from lib.mail_config import MAIL_TO
+from lib.mail_config import TODOIST_BEARER
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
