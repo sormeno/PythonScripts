@@ -66,12 +66,12 @@ data = {"content": discipline_task, "due_string": date.strftime('%Y-%m-%d') + "a
 requests.post(url+'tasks', json=data, headers=headers)
 
 #other tasks
-random.shuffle(skills)
-for tasks in skills:
-    date += timedelta(days=1)
-    data = {"content": random.choice(tasks), "due_string": date.strftime('%Y-%m-%d') + "at 8:00"}
-    requests.post(url+'tasks', json=data, headers=headers)
-    data = {"content": discipline_task, "due_string": date.strftime('%Y-%m-%d') + "at 8:00"}
-    requests.post(url+'tasks', json=data, headers=headers)
+# random.shuffle(skills)
+# for tasks in skills:
+#     date += timedelta(days=1)
+#     data = {"content": random.choice(tasks), "due_string": date.strftime('%Y-%m-%d') + "at 8:00"}
+#     requests.post(url+'tasks', json=data, headers=headers)
+#     data = {"content": discipline_task, "due_string": date.strftime('%Y-%m-%d') + "at 8:00"}
+#     requests.post(url+'tasks', json=data, headers=headers)
 
     
