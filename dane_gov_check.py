@@ -14,7 +14,9 @@ TODAY = now.strftime("%Y-%m-%d")
 resources = [
     {"id": 5371, "name": "ZUW Urbex - Złotoryja"},
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
-    {"id": 5811, "name": "Ander - Osada Dzbenin"}
+    {"id": 5811, "name": "Ander - Osada Dzbenin"},
+    {"id": 8774, "name": "HYRNA - Hyrna"},
+    {"id": 8776, "name": "M2R - Levityn"}
 ]
 
 def check_resource(resource):
