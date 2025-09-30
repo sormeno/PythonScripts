@@ -5,6 +5,8 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import time
+import pandas as pd
+from io import BytesIO
 
 MAIL_SUBJECT = 'dane.gov.pl - check '
 
@@ -16,20 +18,63 @@ resources = [
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
     {"id": 5811, "name": "Ander - Osada Dzbenin"},
     {"id": 8774, "name": "HYRNA - Hyrna"},
-    {"id": 8776, "name": "M2R - Levityn"}
+    {"id": 8776, "name": "M2R - Levityn"},
+    {"id": 9025, "name": "AMS - Natura Park"},  
+    {"id": 9023, "name": "AMS - Ruczaj Park"},
+    {"id": 10249,"name": "JB Atlantic - Żorska"}
 ]
+
+def get_stats(resource_content):    
+
+    file_type = resource_content.get('attributes').get('format')
+    url = resource_content.get('attributes').get('file_url')
+    response = requests.get(url)
+
+    if file_type.lower() == 'csv':
+        data_df = pd.read_csv(BytesIO(response.content))
+    elif file_type.lower() in ['excel', 'xlsx', 'xls']:
+        data_df = pd.read_excel(BytesIO(response.content))
+    else:
+        return '','',''
+
+    # Get total row count
+    row_count = str(len(data_df))
+    #print(data_df.columns.tolist())
+
+    property_type_col = next((col for col in data_df.columns
+                         if "Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny" in col.strip()), None)
+
+    # Filter for 'lokal mieszkalny' only
+    lokal_mieszkalny_df = data_df[data_df[property_type_col] == 'lokal mieszkalny']
+
+    # Calculate average price per sqm for apartments
+    avg_price_sqm = str(round(lokal_mieszkalny_df["Cena m 2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]"].astype(int).mean()))
+
+    # Calculate average total price for apartments
+    avg_price = str(round(lokal_mieszkalny_df["Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]"].astype(int).mean()))
+
+    return row_count, avg_price, avg_price_sqm
 
 def check_resource(resource):
     url = f'https://api.dane.gov.pl/1.4/datasets/{resource["id"]}/resources/?created[term]={TODAY}'
     html = f"<tr><td>{resource['name']}</td>"
+    #print(f"Processing {resource['name']}")
     try:
         response = requests.get(url)
     except Exception as e:
         html = html + "<td>{type(e)}</td><td></td><td></td><td></td></tr>"
 
     data = response.json()
-    resource_exist = "<td style='color: green; font-weight: bold;'>OK</td>" if data.get('data') and len(data['data']) > 0 else "<td style='color: red; font-weight: bold;'>X</td>"
-    html = html + resource_exist + "<td></td><td></td><td></td></tr>"
+    if data.get('data') and len(data['data']) > 0:
+        resource_exist = "<td style='color: green; font-weight: bold;'>OK</td>"  
+        # cnt, avg_price, avg_price_sqm = get_stats(data.get('data')[0]) #TODO fix get_stats
+        # html = html + resource_exist + f"<td>{cnt}</td><td>{avg_price}</td><td>{avg_price_sqm}</td></tr>"
+        html = html + resource_exist + "<td></td><td></td><td></td></tr>"
+    
+    else: 
+        resource_exist = "<td style='color: red; font-weight: bold;'>X</td>"
+        html = html + resource_exist + "<td></td><td></td><td></td></tr>"
+      
     return html
 
 def check_resources(resources):
@@ -38,6 +83,7 @@ def check_resources(resources):
         html = html + check_resource(resource)
 
     return html + "</table>"
+
 
 #try:
 html = check_resources(resources)
