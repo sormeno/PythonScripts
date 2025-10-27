@@ -14,14 +14,21 @@ now = datetime.now()
 TODAY = now.strftime("%Y-%m-%d")
 
 resources = [
-    {"id": 5371, "name": "ZUW Urbex - Złotoryja"},
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
     {"id": 5811, "name": "Ander - Osada Dzbenin"},
+    {"id": 10249,"name": "JB Atlantic - Żorska"}
+    {"id": 11147,"name": "Gal Development - Grabskiego"}
+    {"id": 11146,"name": "Gal Development - Stary Młyn"}
+    {"id": 14103,"name": "Open Development"}
+    {"id": 5371, "name": "ZUW Urbex - Złotoryja"},
+    {"id": 11568,"name": "Vastbouw - Positivo"}
+    {"id": 11567,"name": "Vastbouw - OkiDoki"}
+    {"id": 11566,"name": "Vastbouw - Aura Warszewo E1"}
+    {"id": 11267,"name": "Vastbouw - Aura Warszewo E2"}
     {"id": 8774, "name": "HYRNA - Hyrna"},
     {"id": 8776, "name": "M2R - Levityn"},
     {"id": 9025, "name": "AMS - Natura Park"},  
     {"id": 9023, "name": "AMS - Ruczaj Park"},
-    {"id": 10249,"name": "JB Atlantic - Żorska"}
 ]
 
 def get_stats(resource_content):    
