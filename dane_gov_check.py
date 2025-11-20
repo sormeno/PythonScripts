@@ -120,7 +120,7 @@ def check_resource(resource):
         html = html + resource_exist + td(cnt) + td(apartament_cnt) + td(avg_price) + td(avg_price_sqm) + "</tr>"
     
     else: 
-        resource_exist = f"{td_style('X')}X</td>"
+        resource_exist = f"{td('X')}X</td>"
         html = html + resource_exist + "<td></td><td></td><td></td><td></td></tr>"
       
     return html
