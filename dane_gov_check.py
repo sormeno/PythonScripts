@@ -16,16 +16,19 @@ resources = [
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
     {"id": 5811, "name": "Ander - Osada Dzbenin"},
     {"id": 10249,"name": "JB Atlantic - Żorska"},
-    {"id": 11147,"name": "Gal Development - Grabskiego"},
-    {"id": 11146,"name": "Gal Development - Stary Młyn"},
-    {"id": 14103,"name": "Open Development"},
-    {"id": 5371, "name": "ZUW Urbex - Złotoryja"},
-    {"id": 17044,"name": "Vastbouw - Positivo"},
-    {"id": 17043,"name": "Vastbouw - OkiDoki"},
-    {"id": 17041,"name": "Vastbouw - Aura Warszewo E1"},
-    {"id": 17042,"name": "Vastbouw - Aura Warszewo E2"},
-    {"id": 15694,"name": "Vastbouw - Literatura E1"},
-    {"id": 15695,"name": "Vastbouw - Literatura E2"},
+    {"id": 11147, "name": "Gal Development - Grabskiego"},
+    {"id": 11146, "name": "Gal Development - Stary Młyn"},
+    {"id": 14103, "name": "Open Development"},
+    {"id": 18562, "name": "ZUW Urbex - Złotoryja"},
+    {"id": 18557, "name": "ZUW Urbex - Infinity B1"},
+    {"id": 18559, "name": "ZUW Urbex - Infinity B2"},
+    {"id": 18560, "name": "ZUW Urbex - Murano"},
+    {"id": 17044, "name": "Vastbouw - Positivo"},
+    {"id": 17043, "name": "Vastbouw - OkiDoki"},
+    {"id": 17041, "name": "Vastbouw - Aura Warszewo E1"},
+    {"id": 17042, "name": "Vastbouw - Aura Warszewo E2"},
+    {"id": 15694, "name": "Vastbouw - Literatura E1"},
+    {"id": 15695, "name": "Vastbouw - Literatura E2"},
     {"id": 8774, "name": "HYRNA - Hyrna"},
     {"id": 8776, "name": "M2R - Levityn"},
     {"id": 9025, "name": "AMS - Natura Park"},  
@@ -45,15 +48,15 @@ def get_stats(resource_content):
         elif file_type.lower() in ['excel', 'xlsx', 'xls']:
             data_df = pd.read_excel(BytesIO(response.content))
         else:
-            return 'E:','FILE','TYPE'
+            return 'E:','FILE','TYPE', ''
     except:
-        return 'E:', 'DF', 'IMPORT'
+        return 'E:', 'DF', 'IMPORT', ''
 
     # Get total row count
     try:
         row_count = str(len(data_df))
     except:
-        return 'E:', 'ROW', 'COUNT'
+        return 'E:', 'ROW', 'COUNT', ''
 
 
     # Filter for 'lokal mieszkalny' only
@@ -62,7 +65,7 @@ def get_stats(resource_content):
                             if "Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny" in col.strip()), None)
         lokal_mieszkalny_df = data_df[data_df[property_type_col].str.lower() == 'lokal mieszkalny'].copy()
     except: 
-        return 'E:', 'FILTER', 'ERROR'
+        return 'E:', 'FILTER', 'ERROR', ''
         
 
     # Get apartament count
