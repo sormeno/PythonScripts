@@ -37,9 +37,19 @@ resources = [
 
 def get_stats(resource_content):    
 
-    file_type = resource_content.get('attributes').get('format')
-    url = resource_content.get('attributes').get('file_url')
-    response = requests.get(url)
+    try:
+        file_type = resource_content.get('attributes').get('format')
+        url = resource_content.get('attributes').get('file_url')
+    except:
+        return 'E:', 'RESOURCE', 'ERROR', ''
+    try:
+        response = requests.get(url)
+    except requests.exceptions.SSLError:
+        # Retry with HTTP instead of HTTPS
+        url_http = url.replace("https://", "http://", 1)
+        response = requests.get(url_http)
+    except Exception:
+        return 'E:', 'FILE_URL', 'ERROR', ''
 
     # import file into df
     try:
