@@ -29,10 +29,10 @@ resources = [
     {"id": 17042, "name": "Vastbouw - Aura Warszewo E2"},
     {"id": 15694, "name": "Vastbouw - Literatura E1"},
     {"id": 15695, "name": "Vastbouw - Literatura E2"},
-    {"id": 8774, "name": "HYRNA - Hyrna"},
-    {"id": 8776, "name": "M2R - Levityn"},
-    {"id": 9025, "name": "AMS - Natura Park"},  
-    {"id": 9023, "name": "AMS - Ruczaj Park"},    
+    {"id": 18511, "name": "HYRNA - Hyrna"},
+    {"id": 18510, "name": "M2R - Levityn"},
+    {"id": 18507, "name": "AMS - Natura Park"},  
+    {"id": 18509, "name": "AMS - Ruczaj Park"},    
 ]
 
 def get_stats(resource_content):    
