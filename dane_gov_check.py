@@ -10,7 +10,7 @@ from io import BytesIO
 
 MAIL_SUBJECT = 'dane.gov.pl - check '
 
-REFDATE = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+REFDATE = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 
 resources = [
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
