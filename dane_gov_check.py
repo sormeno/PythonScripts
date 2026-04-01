@@ -27,7 +27,7 @@ resources = [
     {"id": 17043, "name": "Vastbouw - OkiDoki"},
     {"id": 17041, "name": "Vastbouw - Aura Warszewo E1"},
     {"id": 17042, "name": "Vastbouw - Aura Warszewo E2"},
-    {"id": 15694, "name": "Vastbouw - Literatura E1"},
+    #{"id": 15694, "name": "Vastbouw - Literatura E1"},
     {"id": 15695, "name": "Vastbouw - Literatura E2"},
     {"id": 18511, "name": "HYRNA - Hyrna"},
     {"id": 18510, "name": "M2R - Levityn"},
