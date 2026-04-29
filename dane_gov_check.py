@@ -19,10 +19,10 @@ resources = [
     {"id": 11147, "name": "Gal Development - Grabskiego"},
     {"id": 11146, "name": "Gal Development - Stary Młyn"},
     {"id": 14103, "name": "Open Development"},
-    {"id": 18562, "name": "ZUW Urbex - Złotoryja"},
-    {"id": 18557, "name": "ZUW Urbex - Infinity B1"},
-    {"id": 18559, "name": "ZUW Urbex - Infinity B2"},
-    {"id": 18560, "name": "ZUW Urbex - Murano"},
+    #{"id": 18562, "name": "ZUW Urbex - Złotoryja"},
+    #{"id": 18557, "name": "ZUW Urbex - Infinity B1"},
+    #{"id": 18559, "name": "ZUW Urbex - Infinity B2"},
+    #{"id": 18560, "name": "ZUW Urbex - Murano"},
     {"id": 17044, "name": "Vastbouw - Positivo"},
     {"id": 17043, "name": "Vastbouw - OkiDoki"},
     {"id": 17041, "name": "Vastbouw - Aura Warszewo E1"},
@@ -32,7 +32,8 @@ resources = [
     {"id": 18511, "name": "HYRNA - Hyrna"},
     {"id": 18510, "name": "M2R - Levityn"},
     {"id": 18507, "name": "AMS - Natura Park"},  
-    {"id": 18509, "name": "AMS - Ruczaj Park"},    
+    {"id": 18509, "name": "AMS - Ruczaj Park"},     
+    {"id": 31421, "name": "Gala Deweloper - Urzecze"},     
 ]
 
 def get_stats(resource_content):    
