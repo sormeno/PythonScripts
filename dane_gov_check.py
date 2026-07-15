@@ -33,7 +33,6 @@ resources = [
     {"id": 18510, "name": "M2R - Levityn"},
     {"id": 18507, "name": "AMS - Natura Park"},  
     {"id": 18509, "name": "AMS - Ruczaj Park"},     
-    {"id": 31421, "name": "Gala Deweloper - Urzecze"},     
 ]
 
 def get_stats(resource_content):    
