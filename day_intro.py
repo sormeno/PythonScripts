@@ -1,6 +1,7 @@
 from lib.mail import *
 from lib.mail_config import MAIL_TO
 from lib.mail_config import TODOIST_BEARER
+from lib.pge_events import check_pge_events
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
@@ -68,10 +69,14 @@ def get_kio():
 url = 'https://api.todoist.com/rest/v2/'
 headers = {"Authorization": TODOIST_BEARER }
 
+# try:
+#     todoist=get_today_inbox(url,headers,'2155964695')
+# except Exception as e: 
+#     todoist = f"<h5>Todoist Error</h5>{e}"
 try:
-    todoist=get_today_inbox(url,headers,'2155964695')
-except Exception as e: 
-    todoist = f"<h5>Todoist Error</h5>{e}"
+    pge_narodowy = check_pge_events()
+except Exception as e:
+    pge_narodowy = f"<h5>PGE Narodowy Check Error</h5>{e}"
 try:
     meteo = get_meteo()
 except Exception as e: 
@@ -81,9 +86,9 @@ except Exception as e:
 # except Exception as e: 
 #     kio = f"<h5>KIO Error</h5>{e}"
 
-header = '<h2>Jestem kompetentny i zdolny do osiągnięcia swoich celów.</h2>'
+header = '<h2>Stosuj Kontrastowanie Mentalne</h2>'
 
-msg_html = f'<html><head>{header}</head>{todoist}<br>{meteo}<body></body></html>'
+msg_html = f'<html><head>{header}</head>{pge_narodowy}<br>{meteo}<body></body></html>'
 smtp_client = SMTP()
 smtp_client.send_email(MAIL_TO, MAIL_SUBJECT, msg_html_content=msg_html)
 smtp_client.close()
