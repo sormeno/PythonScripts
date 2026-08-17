@@ -56,14 +56,14 @@ def check(d: date):
 
 
 def check_pge_events():
-    d = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today()
+    d = date.today()
     try:
         events, mass = check(d)
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(2)
 
-    if mass == 'YES':
+    if mass:
         return f'<h3>Wydarzenie na PGE Narodowym: {mass[0]["title"]}</h3>'
     else:
         return f'<h3>Brak wydarzeń na PGE Narodowym</h3>'
