@@ -14,7 +14,8 @@ REFDATE = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 
 resources = [
     {"id": 5648, "name": "Ander - Osada Magdalenka"},
-    {"id": 5811, "name": "Ander - Osada Dzbenin"},
+    {"id": 36526, "name": "Ander - Osada Dzbenin"},
+    {"id": 36527, "name": "Ander - Osada Dzbenin 2"},
     {"id": 10249,"name": "JB Atlantic - Żorska"},
     {"id": 11147, "name": "Gal Development - Grabskiego"},
     {"id": 11146, "name": "Gal Development - Stary Młyn"},
@@ -29,6 +30,7 @@ resources = [
     {"id": 33034, "name": "Vastbouw - Aura Warszewo E2"},
     #{"id": 15694, "name": "Vastbouw - Literatura E1"},
     {"id": 33037, "name": "Vastbouw - Literatura E2"},
+    {"id": 37062, "name": "Vastbouw - Verte"},    
     {"id": 18511, "name": "HYRNA - Hyrna"},
     {"id": 18510, "name": "M2R - Levityn"},
     {"id": 18507, "name": "AMS - Natura Park"},  
