@@ -13,7 +13,7 @@ URLS = [
     "https://dane.innotechs.pl/rcm/gal-development-stary-mlyn.xml",
     "https://dane.innotechs.pl/rcm/gal-development-grabskiego.xml",
     "https://dane.innotechs.pl/rcm/ATRIUM_PBH.xml",
-    "https://dane.innotechs.pl/rcm/ANDER_Osada_Magdalenka.xml",
+    "https://dane.innotechs.pl/rcm/ANDER.xml",
     "https://dane.innotechs.pl/rcm/AD_PROGRESS.xml"    
 ]
 
