@@ -2,5 +2,6 @@ lib/__pycache__/*
 lib/mail_config.py
 shopping_list/__pycache__/*
 crontab_error.log
+cron.log
 stats.txt
 eco-tram/*

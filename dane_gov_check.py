@@ -13,9 +13,10 @@ MAIL_SUBJECT = 'dane.gov.pl - check '
 REFDATE = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
 
 resources = [
-    {"id": 5648, "name": "Ander - Osada Magdalenka"},
-    {"id": 36526, "name": "Ander - Osada Dzbenin"},
-    {"id": 36527, "name": "Ander - Osada Dzbenin 2"},
+    {"id": 40701, "name": "Ander - Osada Magdalenka"},
+    #{"id": 40704, "name": "Ander - Osada Dzbenin"},
+    {"id": 40705, "name": "Ander - Osada Dzbenin 2"},
+    {"id": 42029, "name": "Ander - Osada Dzbenin 4"},
     {"id": 10249,"name": "JB Atlantic - Żorska"},
     {"id": 11147, "name": "Gal Development - Grabskiego"},
     {"id": 11146, "name": "Gal Development - Stary Młyn"},
