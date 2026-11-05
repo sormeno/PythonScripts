@@ -17,6 +17,7 @@ resources = [
     #{"id": 40704, "name": "Ander - Osada Dzbenin"},
     {"id": 40705, "name": "Ander - Osada Dzbenin 2"},
     {"id": 42029, "name": "Ander - Osada Dzbenin 4"},
+    {"id": 40703, "name": "Ander - Grzybowska"},
     {"id": 10249,"name": "JB Atlantic - Żorska"},
     {"id": 11147, "name": "Gal Development - Grabskiego"},
     {"id": 11146, "name": "Gal Development - Stary Młyn"},
