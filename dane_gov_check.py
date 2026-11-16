@@ -146,6 +146,7 @@ def check_resources(resources):
     html = "<table><tr><th>Dataset</th><th>Plik Istnieje</th><th>Liczba rekordów</th><th>Liczba mieszkań</th><th>Średnia cena</th><th>Średnia cena mkw</th></tr>"
     for resource in resources:
         html = html + check_resource(resource)
+        time.sleep(5)
 
     return html + "</table>"
 

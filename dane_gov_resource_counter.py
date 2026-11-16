@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import urllib.request
+import time
 
 from lib.mail import *
 from lib.mail_config import MAIL_TO
@@ -25,6 +26,7 @@ html_text = ""
 
 for url in URLS:
     try:
+        time.sleep(5)
         with urllib.request.urlopen(url, timeout=60) as response:
             root = ET.fromstring(response.read())
 
