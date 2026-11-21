@@ -10,7 +10,7 @@ from io import BytesIO
 
 MAIL_SUBJECT = 'dane.gov.pl - check '
 
-REFDATE = (datetime.now() - timedelta(days=7)).strftime("%Y-%m-%d")
+REFDATE = (datetime.now() - timedelta(days=3)).strftime("%Y-%m-%d")
 
 resources = [
     {"id": 40701, "name": "Ander - Osada Magdalenka"},
@@ -76,8 +76,8 @@ def get_stats(resource_content):
     # Filter for 'lokal mieszkalny' only
     try:
         property_type_col = next((col for col in data_df.columns
-                            if "Rodzaj nieruchomości: lokal mieszkalny, dom jednorodzinny" in col.strip()), None)
-        lokal_mieszkalny_df = data_df[data_df[property_type_col].str.lower() == 'lokal mieszkalny'].copy()
+                            if "Rodzaj nieruchomości" in col.strip()), None)
+        lokal_mieszkalny_df = data_df[data_df[property_type_col].str.lower().isin(['lokal mieszkalny', 'dom jednorodzinny'])].copy()
     except: 
         return 'E:', 'FILTER', 'ERROR', ''
         
@@ -90,7 +90,7 @@ def get_stats(resource_content):
     
     # Calculate average price per sqm for apartments
     try:
-        price_sqm_col = "Cena m 2 powierzchni użytkowej lokalu mieszkalnego / domu jednorodzinnego [zł]"
+        price_sqm_col = "Cena 1 m2 powierzchni użytkowej lokalu mieszkalnego albo domu jednorodzinnego"
         # Convert to numeric, coercing errors to NaN
         lokal_mieszkalny_df[price_sqm_col] = pd.to_numeric(
             lokal_mieszkalny_df[price_sqm_col].astype(str).str.replace(' ', '').str.replace(',', '.'), 
@@ -103,7 +103,7 @@ def get_stats(resource_content):
 
     # Calculate average total price for apartments
     try:
-        price_col = "Cena lokalu mieszkalnego lub domu jednorodzinnego będących przedmiotem umowy stanowiąca iloczyn ceny m2 oraz powierzchni [zł]"
+        price_col = "Cena lokalu mieszkalnego albo domu jednorodzinnego lub ich części będących przedmiotem umowy"
         # Convert to numeric, coercing errors to NaN
         lokal_mieszkalny_df[price_col] = pd.to_numeric(
             lokal_mieszkalny_df[price_col].astype(str).str.replace(' ', '').str.replace(',', '.'), 
